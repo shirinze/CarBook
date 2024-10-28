@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarBook.Domain", "Core\CarB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastracture", "Infrastracture", "{A7CDFCD2-26DD-49F6-8B89-533BC1A17129}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.Persistence", "Infrastracture\CarBook.Persistence\CarBook.Persistence.csproj", "{CA5A2CFE-0AB1-4567-B39B-43A089828872}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarBook.Persistence", "Infrastracture\CarBook.Persistence\CarBook.Persistence.csproj", "{CA5A2CFE-0AB1-4567-B39B-43A089828872}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D0EE7B1C-320B-4FF0-B266-5DBFA92C4C95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.WebApi", "Presentation\CarBook.WebApi\CarBook.WebApi.csproj", "{CE879D69-58DA-4384-AA61-7068F9D6346F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarBook.WebApi", "Presentation\CarBook.WebApi\CarBook.WebApi.csproj", "{CE879D69-58DA-4384-AA61-7068F9D6346F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBookApplication", "Core\CarBookApplication\CarBookApplication.csproj", "{1CD2CFD5-B648-4251-9EFD-BAD20D94D93D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CE879D69-58DA-4384-AA61-7068F9D6346F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE879D69-58DA-4384-AA61-7068F9D6346F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE879D69-58DA-4384-AA61-7068F9D6346F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD2CFD5-B648-4251-9EFD-BAD20D94D93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD2CFD5-B648-4251-9EFD-BAD20D94D93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD2CFD5-B648-4251-9EFD-BAD20D94D93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD2CFD5-B648-4251-9EFD-BAD20D94D93D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{E672E4F1-8F77-4E85-A3B0-172F97B21F71} = {505A2E21-94A5-4019-8107-DF6B77C479CF}
 		{CA5A2CFE-0AB1-4567-B39B-43A089828872} = {A7CDFCD2-26DD-49F6-8B89-533BC1A17129}
 		{CE879D69-58DA-4384-AA61-7068F9D6346F} = {D0EE7B1C-320B-4FF0-B266-5DBFA92C4C95}
+		{1CD2CFD5-B648-4251-9EFD-BAD20D94D93D} = {505A2E21-94A5-4019-8107-DF6B77C479CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47306828-D7ED-4790-85E7-F18DA6E4A4AA}
