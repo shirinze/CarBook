@@ -1,4 +1,4 @@
-﻿using CarBook.Domain.Entities;
+using CarBook.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +15,6 @@ namespace CarBookApplication.Features.Mediator.Results.BlogResults
         public string CoverImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CategoryID { get; set; }
+
     }
 }
