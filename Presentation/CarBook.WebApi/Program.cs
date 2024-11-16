@@ -1,5 +1,6 @@
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
+using CarBook.Persistence.Repositories.BlogRespositories;
 using CarBook.Persistence.Repositories.CarRepositories;
 using CarBookApplication.Features.CQRS.Handlers.AboutHandlers;
 using CarBookApplication.Features.CQRS.Handlers.BannerHandlers;
@@ -8,16 +9,30 @@ using CarBookApplication.Features.CQRS.Handlers.CarHandlers;
 using CarBookApplication.Features.CQRS.Handlers.CategoryHandlers;
 using CarBookApplication.Features.CQRS.Handlers.ConatctHandlers;
 using CarBookApplication.Interfaces;
+using CarBookApplication.Interfaces.BlogInterfaces;
 using CarBookApplication.Interfaces.CarInterfaces;
 using CarBookApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient();
+
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowed((host) => true)
+        .AllowCredentials();
+    });
+});
 
 // Add services to the container.
 
 builder.Services.AddScoped<CarBookContext>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
+builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
 
 builder.Services.AddScoped<CreateAboutCommnadHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
@@ -65,6 +80,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -73,6 +89,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 

@@ -49,5 +49,11 @@ namespace CarBook.WebApi.Controllers
             await _mediator.Send(command);
             return Ok("guncellendi");
         }
+        [HttpGet("GetLast3BlogsWithAuthor")]
+        public async Task<IActionResult> GetLast3BlogsWithAuthor()
+        {
+            var values = await _mediator.Send(GetLast3BlogsWithAuthor());
+            return Ok(values);
+        }
     }
 }
