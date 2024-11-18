@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBook.Persistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    [Migration("20241108091430_add-blog-author-table")]
-    partial class addblogauthortable
+    [Migration("20241118092612_added-details-blogs")]
+    partial class addeddetailsblogs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -112,11 +112,7 @@ namespace CarBook.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlogID"));
 
-                    b.Property<string>("AuthorID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("AuthorID1")
+                    b.Property<int>("AuthorID")
                         .HasColumnType("int");
 
                     b.Property<int>("CategoryID")
@@ -129,13 +125,17 @@ namespace CarBook.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BlogID");
 
-                    b.HasIndex("AuthorID1");
+                    b.HasIndex("AuthorID");
 
                     b.HasIndex("CategoryID");
 
@@ -492,7 +492,7 @@ namespace CarBook.Persistence.Migrations
                 {
                     b.HasOne("CarBook.Domain.Entities.Author", "Author")
                         .WithMany("Blogs")
-                        .HasForeignKey("AuthorID1")
+                        .HasForeignKey("AuthorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

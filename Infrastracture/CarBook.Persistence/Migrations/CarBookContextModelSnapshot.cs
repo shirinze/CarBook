@@ -122,15 +122,17 @@ namespace CarBook.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BlogID");
 
-
                     b.HasIndex("AuthorID");
-
 
                     b.HasIndex("CategoryID");
 
@@ -488,7 +490,6 @@ namespace CarBook.Persistence.Migrations
                     b.HasOne("CarBook.Domain.Entities.Author", "Author")
                         .WithMany("Blogs")
                         .HasForeignKey("AuthorID")
-
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
