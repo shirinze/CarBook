@@ -1,6 +1,9 @@
-﻿using CarBook.Dto.CarDtos;
+﻿using CarBook.Dto.BrandDtos;
+using CarBook.Dto.CarDtos;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace CarBook.WebUI.Controllers
 {
@@ -28,7 +31,42 @@ namespace CarBook.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> CreateCar()
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7100/api/Brands");
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            var value = JsonConvert.DeserializeObject<List<ResultBrandDto>>(jsonData);
+            List<SelectListItem> brandValue = (from x in value
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.name,
+                                                   Value = x.brandID.ToString()
+                                               }).ToList();
+            ViewBag.BrandValue = brandValue;
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> CreateCar(CreateCarDto createcar)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(createcar);
+            StringContent stringcontent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("https://localhost:7100/api/Cars/", stringcontent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        public async Task<IActionResult> RemoveCar(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.DeleteAsync($"https://localhost:7100/api/Cars/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+       
     }
 }

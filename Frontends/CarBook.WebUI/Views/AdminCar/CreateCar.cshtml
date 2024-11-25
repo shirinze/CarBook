@@ -1,4 +1,5 @@
-﻿@{
+﻿@model CreateCarDto
+@{
     ViewData["Title"] = "CreateCar";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
@@ -14,21 +15,44 @@
 
                         <form method="post" >
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Marka</label>
-                                dropdown
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                
+                                @Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.BrandValue,new {@class="form-control"})
+                             
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputModel">Model</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                               
+                                <input type="text" class="form-control" id="exampleInputModel" asp-for="Model" placeholder="Model Girişi Yapınız">
                             </div>
-                            <div class="form-group mb-3">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="checkmeout0">
-                                    <label class="custom-control-label" for="checkmeout0">Check me out !</label>
-                                </div>
+                            <div class="form-group">
+                               
+                                <input type="text" class="form-control" id="exampleInputCoverImageUrl" asp-for="CoverImageUrl" placeholder="Kapak Fotoğraf Linki Giriniz">
                             </div>
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                            <div class="form-group">
+                                
+                                <input type="text" class="form-control" id="exampleInputkm" asp-for="Km" placeholder="Km Girişi Yapınız">
+                            </div>
+                            <div class="form-group">
+                               
+                                <input type="text" class="form-control" id="exampleInputTransmision" asp-for="Transmission" placeholder="Vites Girişi Yapınız">
+                            </div>
+                            <div class="form-group">
+                               
+                                <input type="number" class="form-control" id="exampleInputSeat" asp-for="Seate" placeholder="Koltuk Sayısı Seçiniz">
+                            </div>
+                            <div class="form-group">
+                                
+                                <input type="number" class="form-control" id="exampleInputLuggage" asp-for="Luggage" placeholder="Bagaj Sayısı Giriniz">
+                            </div>
+                            <div class="form-group">
+                                
+                                <input type="text" class="form-control" id="exampleInputFuel" asp-for="Fuel" placeholder="Yakıt Türü Giriniz">
+                            </div>
+                            <div class="form-group">
+                               
+                                <input type="text" class="form-control" id="exampleInputBigimageUrl" asp-for="BigImageUrl" placeholder="Büyük Kapak Fotoğraf Linki Giriniz">
+                            </div>
+                           
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
                         </form>
 
                     </div> <!-- end card-body-->
