@@ -19,7 +19,7 @@ namespace CarBookApplication.Features.CQRS.Handlers.CarHandlers
         }
         public async Task Handle(UpdateCarCommand command)
         {
-            var value = await _repository.GetByIDAsync(command.BrandID);
+            var value = await _repository.GetByIDAsync(command.CarID);
             value.CoverImageUrl = command.CoverImageUrl;
             value.Km = command.Km;
             value.Seate = command.Seate;

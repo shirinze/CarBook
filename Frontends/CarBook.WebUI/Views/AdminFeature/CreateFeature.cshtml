@@ -1,0 +1,36 @@
+﻿@model CreateFeatureDto
+@{
+    ViewData["Title"] = "CreateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Yeni Özellik</h4>
+                        <p class="card-subtitle mb-4">Arabalarla ilgili yeni özellik eklem(klima,bluetooth,audio,...)bu sayfa üzerinden gerçekleştirebilirsiniz.</p>
+
+                        <form method="post" >
+                            <div class="form-group">
+                               
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="Name" placeholder="Özellik Adı Giriniz">
+                            </div>
+
+                    
+                       
+                           
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+
+                    </div> <!-- end card-body-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

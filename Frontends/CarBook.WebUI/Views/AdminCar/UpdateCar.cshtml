@@ -1,0 +1,66 @@
+﻿@model UpdateCarDto
+@{
+    ViewData["Title"] = "UpdateCar";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Araç Güncelleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">Araç ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir.</p>
+
+                        <form method="post">
+                            <input type="hidden" asp-for="CarID" />
+                            <div class="form-group">
+
+                                @Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.BrandValue, new { @class = "form-control" })
+
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" id="exampleInputModel" asp-for="Model" placeholder="Model Girişi Yapınız">
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" id="exampleInputCoverImageUrl" asp-for="CoverImageUrl" placeholder="Kapak Fotoğraf Linki Giriniz">
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" id="exampleInputkm" asp-for="Km" placeholder="Km Girişi Yapınız">
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" id="exampleInputTransmision" asp-for="Transmission" placeholder="Vites Girişi Yapınız">
+                            </div>
+                            <div class="form-group">
+
+                                <input type="number" class="form-control" id="exampleInputSeat" asp-for="Seate" placeholder="Koltuk Sayısı Seçiniz">
+                            </div>
+                            <div class="form-group">
+
+                                <input type="number" class="form-control" id="exampleInputLuggage" asp-for="Luggage" placeholder="Bagaj Sayısı Giriniz">
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" id="exampleInputFuel" asp-for="Fuel" placeholder="Yakıt Türü Giriniz">
+                            </div>
+                            <div class="form-group">
+
+                                <input type="text" class="form-control" id="exampleInputBigimageUrl" asp-for="BigImageUrl" placeholder="Büyük Kapak Fotoğraf Linki Giriniz">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+
+                    </div> <!-- end card-body-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
