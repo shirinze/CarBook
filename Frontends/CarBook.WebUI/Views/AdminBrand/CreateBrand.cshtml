@@ -1,6 +1,6 @@
-﻿@model CreateFeatureDto
+﻿@model CreateBrandDto
 @{
-    ViewData["Title"] = "CreateFeature";
+    ViewData["Title"] = "CreateBrand";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -11,11 +11,11 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Yeni Araç Özellik</h4>
-                        <p class="card-subtitle mb-4">Arabalarla ilgili yeni özellik eklem(klima,bluetooth,audio,...)bu sayfa üzerinden gerçekleştirebilirsiniz.</p>
-                        <form method="post" >
+                        <h4 class="card-title">Yeni Araç Markası</h4>
+                        <p class="card-subtitle mb-4">Arabalarla ilgili yeni Marka ekleme bu sayfa üzerinden gerçekleştirebilirsiniz.</p>
+                        <form method="post">
                             <div class="form-group">
-                               <input type="text" class="form-control" id="exampleInputName" asp-for="Name" placeholder="Özellik Adı Giriniz">
+                                <input type="text" class="form-control" id="exampleInputName" asp-for="name" placeholder="Marka Adı Giriniz">
                             </div>
                             <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
                         </form>
@@ -27,4 +27,5 @@
     </div>
 
 </div>
+
 

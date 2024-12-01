@@ -53,8 +53,11 @@ namespace CarBook.WebUI.Controllers
             var responseMessage = await client.DeleteAsync($"https://localhost:7100/api/Features/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
+                TempData["AlertMessage"] = "Özellik başarıyla silindi.";
                 return RedirectToAction("Index");
+               
             }
+            TempData["AlertMessage"] = "Özellik silinemedi.";
             return View();
         }
         [HttpGet]

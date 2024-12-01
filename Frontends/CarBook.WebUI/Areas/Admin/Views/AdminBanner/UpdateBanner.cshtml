@@ -1,0 +1,42 @@
+﻿@model UpdateBannerDto
+@{
+    ViewData["Title"] = "UpdateBanner";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h4 class="card-title">Banner Güncelleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">Ana sayfanın banner alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.Tema bütünlüğünün bozulması adına lütfen sadece 1 tane veri girişi yapınız.</p>
+                        <form method="post">
+                            <input type="hidden" asp-for="BannerID" />
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputTitle" asp-for="Title">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputDescription" asp-for="Description">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputVideoUrl" asp-for="VideoUrl" >
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputVideoDescription" asp-for="VideoDescription">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+

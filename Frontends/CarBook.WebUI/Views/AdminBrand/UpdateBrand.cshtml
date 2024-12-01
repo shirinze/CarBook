@@ -1,20 +1,21 @@
-﻿@model UpdateFeatureDto
+﻿@model UpdateBrandDto
 @{
-    ViewData["Title"] = "UpdateFeature";
+    ViewData["Title"] = "UpdateBrand";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title"> Özellik Güncelleme sayfası</h4>
-                    <p class="card-subtitle mb-4">Arabalarla ilgili yeni özellik eklem(klima,bluetooth,audio,...)bu sayfa üzerinden gerçekleştirebilirsiniz.</p>
+                    <h4 class="card-title"> Marka Güncelleme sayfası</h4>
+                    <p class="card-subtitle mb-4">Arabalarla ilgili yeni Marka işlemlerını bu sayfa üzerinden gerçekleştirebilirsiniz.</p>
                     <form method="post">
-                        <input type="hidden" asp-for="FeatureID" />
+                        <input type="hidden" asp-for="brandID" />
                         <div class="form-group">
-                            <input type="text" class="form-control" id="exampleInputName" asp-for="Name" placeholder="Özellik Adını Güncceleyınız">
+                            <input type="text" class="form-control" id="exampleInputName" asp-for="name" placeholder="Marka Adını Güncceleyınız">
                         </div>
                         <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
                     </form>

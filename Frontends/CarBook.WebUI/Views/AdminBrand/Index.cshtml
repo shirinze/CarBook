@@ -1,0 +1,57 @@
+﻿@model List<ResultBrandDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Araba Marka Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Arabalarla ilgili yeni Marka ekleme bu sayfa üzerinden gerçekleştirebilirsiniz.
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Marka Adı</th>
+
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.name</td>
+                                            <td><a href="/AdminBrand/RemoveBrand/@item.brandID" class="btn btn-outline-danger">Sil</a></td>
+                                            <td><a href="/AdminBrand/UpdateBrand/@item.brandID" class="btn btn-outline-success">Güncelle</a></td>
+
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                            <a href="/AdminBrand/CreateBrand/" class="btn btn-outline-primary">Yeni Marka Ekle</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

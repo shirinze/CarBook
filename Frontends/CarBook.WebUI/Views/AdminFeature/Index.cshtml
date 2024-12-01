@@ -5,54 +5,65 @@
     int count = 0;
 }
 
-<div class="page-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Araba Özellik Listesi</h4>
-                        <p class="card-subtitle mb-4">
-                          Arabalarla ilgili yeni özellik eklem(klima,bluetooth,audio,...)bu sayfa üzerinden gerçekleştirebilirsiniz.
-                        </p>
-                        <div class="table-responsive">
-                            <table class="table mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Özellik</th>
 
-                                        <th>Sil</th>
-                                        <th>Güncelle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach (var item in Model)
-                                    {
-                                        count++;
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Araba Özellik Listesi</h4>
+                            <p class="card-subtitle mb-4">
+                                Arabalarla ilgili yeni özellik eklem(klima,bluetooth,audio,...)bu sayfa üzerinden gerçekleştirebilirsiniz.Temada veri tutarlığını sağlayabilmek için lütfen 3 ün katı şeklinde verı girişi yapınız.
+                            </p>
+
+                        @if (TempData["AlertMessage"] != null)
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                @TempData["AlertMessage"]
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
                                         <tr>
-                                            <th scope="row">@count</th>
-                                            <td>@item.Name</td>
-                                            <td><a href="/AdminFeature/RemoveFeature/@item.FeatureID"  class="btn btn-outline-danger">Sil</a></td>
-                                            <td><a href="/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Güncelle</a></td>
+                                            <th>#</th>
+                                            <th>Özellik</th>
 
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
                                         </tr>
-                                    }
-                             
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            count++;
+                                            <tr>
+                                                <th scope="row">@count</th>
+                                                <td>@item.Name</td>
+                                                <td><a href="/AdminFeature/RemoveFeature/@item.FeatureID" class="btn btn-outline-danger">Sil</a></td>
+                                                <td><a href="/AdminFeature/UpdateFeature/@item.FeatureID" class="btn btn-outline-success">Güncelle</a></td>
 
-                                </tbody>
-                            </table>
-                            <a href="/AdminFeature/CreateFeature/" class="btn btn-outline-primary">Yeni Özellik Ekle</a>
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                                <a href="/AdminFeature/CreateFeature/" class="btn btn-outline-primary">Yeni Özellik Ekle</a>
+                            </div>
+
                         </div>
-
                     </div>
+
                 </div>
-
             </div>
-        </div>
 
-    </div> 
-</div>
+        </div>
+    </div>
+
+
 
 
 
