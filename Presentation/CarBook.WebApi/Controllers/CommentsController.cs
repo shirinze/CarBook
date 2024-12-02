@@ -46,5 +46,11 @@ namespace CarBook.WebApi.Controllers
             _repository.Update(comment);
             return Ok("guncellendi");
         }
+        [HttpGet("CommentListByBlog")]
+        public IActionResult CommentListByBlog(int id)
+        {
+            var value = _repository.GetCommentsByBlogId(id);
+            return Ok(value);
+        }
     }
 }
