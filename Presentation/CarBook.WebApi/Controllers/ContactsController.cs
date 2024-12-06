@@ -43,7 +43,7 @@ namespace CarBook.WebApi.Controllers
             return Ok("iletisim eklendi");
 
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveContact(int id)
         {
             await _removeContactCommandHandler.Handle(new RemoveContactCommand(id));

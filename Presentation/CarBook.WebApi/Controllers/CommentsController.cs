@@ -27,7 +27,7 @@ namespace CarBook.WebApi.Controllers
             _repository.Create(comment);
             return Ok("eklendi");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult RemoveComment(int id)
         {
             var value = _repository.GetById(id);
