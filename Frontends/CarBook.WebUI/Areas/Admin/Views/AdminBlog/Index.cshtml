@@ -20,7 +20,7 @@
                             <table class="table mb-0">
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>#</th>
                                         <th>Başlık</th>
                                         <th>Yazar</th>
                                         <th>Kategori</th>
@@ -40,9 +40,9 @@
                                             <td>@item.AuthorName</td>
                                             <td>@item.CategoryName</td>
                                             <td>@item.CreatedDate</td>
-                                            <td><a href="/Admin/AdminBlog/RemoveBlog/@item.BlogID" class="btn btn-outline-danger">Kaldır</a></td>
+                                            <td><a href="/Admin/AdminBlog/RemoveBlog/@item.BlogID" class="btn btn-outline-danger">sil</a></td>
                                             <td><a href="/Blog/BlogDetail/@item.BlogID" class="btn btn-outline-dark">Blogu Aç</a></td>
-                                            <td><a href="/Admin/AdminBlog/BlogListByBlogID/@item.BlogID" class="btn btn-outline-dark">Yorumlar</a></td>
+                                            <td><a href="/Admin/AdminComment/Index/@item.BlogID" class="btn btn-outline-success">Yorumlar</a></td>
 
                                         </tr>
                                     }

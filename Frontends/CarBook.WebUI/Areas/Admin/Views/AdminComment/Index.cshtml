@@ -16,7 +16,22 @@
                             Bloglarla ilgili o bloga yapılmış olan yorum listesini by sayfadan görebilirsiniz.ilgili yorumları kaldırabilir yada tekrar aktif hale getirebilirsiniz. bunun için yorumlarin altında bulunan butonları kullanabilirsiniz.
                         </p>
 
-                        .....
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <h5 class="card-header">Yorum  @count </h5>
+                                    <div class="card-body">
+                                        <h4 class="card-title">@item.Name</h4>
+                                        <p class="card-text">
+                                            @item.Description
+                                        </p>
+                                        <a href="#" class="btn btn-primary waves-effect waves-light">Yorumu kaldir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
 

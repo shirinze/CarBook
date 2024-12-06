@@ -1,30 +1,29 @@
-﻿
-using CarBook.Dto.CommentDtos;
+﻿using CarBook.Dto.ContactDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Route("Admin/AdminComment")]
-    public class AdminCommentController : Controller
+    [Route("Admin/AdminContact")]
+    public class AdminContactController : Controller
     {
+
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public AdminCommentController(IHttpClientFactory httpClientFactory)
+        public AdminContactController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
-        [Route("Index/{id}")]
-        public async Task<IActionResult> Index(int id)
+        [Route("Index")]
+        public async Task<IActionResult> Index()
         {
-            ViewBag.v = id;
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"https://localhost:7100/api/Comments/CommentListByBlog?id=" + id);
+            var responseMessage = await client.GetAsync("https://localhost:7100/api/Contacts");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var value = JsonConvert.DeserializeObject<List<ResultCommentDto>>(jsonData);
+                var value = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData);
                 return View(value);
             }
             return View();
