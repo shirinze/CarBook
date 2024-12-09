@@ -20,6 +20,12 @@ namespace CarBook.Persistence.Repositories.CarRepositories
             _context = context;
         }
 
+        public int GetCarCount()
+        {
+            var value=_context.Cars.Count();
+            return value;
+        }
+
         public List<Car> GetCarsListBrand()
         {
             var values=_context.Cars.Include(x=>x.Brand).ToList();

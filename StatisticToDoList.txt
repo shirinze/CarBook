@@ -1,0 +1,3 @@
+﻿Araba Sayısı
+Lokasyon Sayısı
+Yazar Sayısı
