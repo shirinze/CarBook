@@ -18,12 +18,12 @@ namespace CarBook.Persistence.Repositories.StatisticsRepositories
             _context = context;
         }
 
-        public string BlogTitleByMaxBlogComment()
+        public string GetBlogTitleByMaxBlogComment()
         {
             throw new NotImplementedException();
         }
 
-        public string BrandNameByMaxChar()
+        public string GetBrandNameByMaxChar()
         {
             throw new NotImplementedException();
         }
