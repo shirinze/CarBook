@@ -17,16 +17,118 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0 text-white">
-                                    @ViewBag.v
+                                    @ViewBag.carcount
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">@ViewBag.v1 %<i class="mdi mdi-arrow-up"></i></span>
+                                <span class="text-white-50">@ViewBag.carcountrandom %<i class="mdi mdi-arrow-up"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.v1%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.carcountrandom%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-success border-success">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Mevcut Lokasyon</span>
+                            <h5 class="card-title mb-0 text-white">Kiralama Lokasyon Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.locationcount
+                                </h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <span class="text-white-50">@ViewBag.LocationRandom %<i class="mdi mdi-arrow-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.LocationRandom%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-warning border-warning">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Mevcut Yazarlar</span>
+                            <h5 class="card-title mb-0 text-white">Yazar Sayısı </h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.Authorcount
+                                </h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <span class="text-white-50">@ViewBag.Authorcountrandom % <i class="mdi mdi-arrow-up"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width:@ViewBag.Authorcountrandom%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-info border-info">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Mevcut Bloglar</span>
+                            <h5 class="card-title mb-0 text-white">Yayınlanan Blog Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center text-white mb-0">
+                                    @ViewBag.Blogcount
+                                </h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <span class="text-white-50">@ViewBag.Blogcountrandom% <i class="mdi mdi-arrow-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.Blogcountrandom%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <div class="card bg-primary border-primary">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <span class="badge badge-soft-light float-right">Mevcut Markalar</span>
+                            <h5 class="card-title mb-0 text-white">Marka Sayısı</h5>
+                        </div>
+                        <div class="row d-flex align-items-center mb-4">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center mb-0 text-white">
+                                    @ViewBag.Brandcount
+                                </h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <span class="text-white-50">@ViewBag.Brandcountrandom% <i class="mdi mdi-arrow-up"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.Brandcountrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -42,16 +144,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    $1875.54
+                                    @ViewBag.AvgRentPriceForDaily
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">18.71% <i class="mdi mdi-arrow-down"></i></span>
+                                <span class="text-white-50">@ViewBag.AvgRentPriceForDailyrandom% <i class="mdi mdi-arrow-down"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.AvgRentPriceForDailyrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -67,16 +169,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    $784.62
+                                    @ViewBag.AvgRentPriceForWeekly
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">57% <i class="mdi mdi-arrow-up"></i></span>
+                                <span class="text-white-50">@ViewBag.AvgRentPriceForWeeklyrandom% <i class="mdi mdi-arrow-up"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 68%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.AvgRentPriceForWeeklyrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -92,16 +194,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    1,15,187
+                                    @ViewBag.AvgRentPriceForMonthly
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">17.8% <i class="mdi mdi-arrow-down"></i></span>
+                                <span class="text-white-50">@ViewBag.AvgRentPriceForMonthlyrandom% <i class="mdi mdi-arrow-down"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 57%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.AvgRentPriceForMonthlyrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -119,16 +221,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0 text-white">
-                                    $17.21
+                                    @ViewBag.CarCountByTranmissionIsAutor
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
+                                <span class="text-white-50">@ViewBag.CarCountByTranmissionIsAutorandom% <i class="mdi mdi-arrow-up"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.CarCountByTranmissionIsAutorandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -144,16 +246,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    $1875.54
+                                    @ViewBag.BrandNameByMaxChar
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">18.71% <i class="mdi mdi-arrow-down"></i></span>
+                                <span class="text-white-50">@ViewBag.BrandNameByMaxCharrandom% <i class="mdi mdi-arrow-down"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.BrandNameByMaxCharrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -169,16 +271,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    $784.62
+                                    @ViewBag.BlogTitleByMaxBlogComment
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">57% <i class="mdi mdi-arrow-up"></i></span>
+                                <span class="text-white-50">@ViewBag.BlogTitleByMaxBlogCommentrandom% <i class="mdi mdi-arrow-up"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 68%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.BlogTitleByMaxBlogCommentrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -194,16 +296,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    1,15,187
+                                    @ViewBag.CarCountByKmSmallerThen1000
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">17.8% <i class="mdi mdi-arrow-down"></i></span>
+                                <span class="text-white-50">@ViewBag.CarCountByKmSmallerThen1000random% <i class="mdi mdi-arrow-down"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 57%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.CarCountByKmSmallerThen1000random%;"></div>
                         </div>
                     </div>
                 </div>
@@ -221,16 +323,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center mb-0 text-white">
-                                    $17.21
+                                    @ViewBag.CarCountByFuelGasolineOrDisel
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
+                                <span class="text-white-50">@ViewBag.CarCountByFuelGasolineOrDiselrandom% <i class="mdi mdi-arrow-up"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.CarCountByFuelGasolineOrDiselrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -246,16 +348,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    $1875.54
+                                    @ViewBag.CarCountByFuelElectric
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">18.71% <i class="mdi mdi-arrow-down"></i></span>
+                                <span class="text-white-50">@ViewBag.CarCountByFuelElectricrandom% <i class="mdi mdi-arrow-down"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.CarCountByFuelElectricrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -271,16 +373,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    $784.62
+                                    @ViewBag.CarBrandAndModelByRentPriceMax
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">57% <i class="mdi mdi-arrow-up"></i></span>
+                                <span class="text-white-50">@ViewBag.CarBrandAndModelByRentPriceMaxrandom% <i class="mdi mdi-arrow-up"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 68%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.CarBrandAndModelByRentPriceMaxrandom%;"></div>
                         </div>
                     </div>
                 </div>
@@ -296,118 +398,16 @@
                         <div class="row d-flex align-items-center mb-4">
                             <div class="col-8">
                                 <h2 class="d-flex align-items-center text-white mb-0">
-                                    1,15,187
+                                    @ViewBag.CarBrandAndModelByRentPriceMin
                                 </h2>
                             </div>
                             <div class="col-4 text-right">
-                                <span class="text-white-50">17.8% <i class="mdi mdi-arrow-down"></i></span>
+                                <span class="text-white-50">@ViewBag.CarBrandAndModelByRentPriceMinrandom% <i class="mdi mdi-arrow-down"></i></span>
                             </div>
                         </div>
 
                         <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 57%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end col-->
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 col-xl-3">
-                <div class="card bg-primary border-primary">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">Daily</span>
-                            <h5 class="card-title mb-0 text-white">Cost per Unit</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h2 class="d-flex align-items-center mb-0 text-white">
-                                    $17.21
-                                </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">12.5% <i class="mdi mdi-arrow-up"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end col-->
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card bg-success border-success">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">Per Week</span>
-                            <h5 class="card-title mb-0 text-white">Market Revenue</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h2 class="d-flex align-items-center text-white mb-0">
-                                    $1875.54
-                                </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">18.71% <i class="mdi mdi-arrow-down"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 38%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end col-->
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card bg-warning border-warning">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">Per Month</span>
-                            <h5 class="card-title mb-0 text-white">Expenses</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h2 class="d-flex align-items-center text-white mb-0">
-                                    $784.62
-                                </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">57% <i class="mdi mdi-arrow-up"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 68%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end col-->
-
-            <div class="col-md-6 col-xl-3">
-                <div class="card bg-info border-info">
-                    <div class="card-body">
-                        <div class="mb-4">
-                            <span class="badge badge-soft-light float-right">All Time</span>
-                            <h5 class="card-title mb-0 text-white">Daily Visits</h5>
-                        </div>
-                        <div class="row d-flex align-items-center mb-4">
-                            <div class="col-8">
-                                <h2 class="d-flex align-items-center text-white mb-0">
-                                    1,15,187
-                                </h2>
-                            </div>
-                            <div class="col-4 text-right">
-                                <span class="text-white-50">17.8% <i class="mdi mdi-arrow-down"></i></span>
-                            </div>
-                        </div>
-
-                        <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
-                            <div class="progress-bar bg-light" role="progressbar" style="width: 57%;"></div>
+                            <div class="progress-bar bg-light" role="progressbar" style="width: @ViewBag.CarBrandAndModelByRentPriceMinrandom%;"></div>
                         </div>
                     </div>
                 </div>
