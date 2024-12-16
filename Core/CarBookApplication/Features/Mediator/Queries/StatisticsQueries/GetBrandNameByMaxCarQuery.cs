@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarBookApplication.Features.Mediator.Queries.StatisticsQueries
 {
-    public class GetBrandNameByMaxCharQuery:IRequest<GetBrandNameByMaxCharQueryResult>
+    public class GetBrandNameByMaxCarQuery:IRequest<GetBrandNameByMaxCarQueryResult>
     {
     }
 }

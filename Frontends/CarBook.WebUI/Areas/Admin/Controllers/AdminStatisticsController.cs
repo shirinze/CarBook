@@ -87,7 +87,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 int AvgRentPriceForDailyrandom = random.Next(0, 101);
                 var jsonData6 = await responseMessage6.Content.ReadAsStringAsync();
                 var value6 = JsonConvert.DeserializeObject<ResultStatisticDto>(jsonData6);
-                ViewBag.AvgRentPriceForDaily = value6.AvgRentPriceForDaily;
+                ViewBag.AvgRentPriceForDaily = value6.AvgRentPriceForDaily.ToString("0.00");
                 ViewBag.AvgRentPriceForDailyrandom = AvgRentPriceForDailyrandom;
             }
             #endregion
@@ -99,7 +99,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 int AvgRentPriceForWeeklyrandom = random.Next(0, 101);
                 var jsonData7 = await responseMessage7.Content.ReadAsStringAsync();
                 var value7 = JsonConvert.DeserializeObject<ResultStatisticDto>(jsonData7);
-                ViewBag.AvgRentPriceForWeekly = value7.AvgRentPriceForWeekly;
+                ViewBag.AvgRentPriceForWeekly = value7.AvgRentPriceForWeekly.ToString("0.00");
                 ViewBag.AvgRentPriceForWeeklyrandom = AvgRentPriceForWeeklyrandom;
             }
             #endregion
@@ -111,7 +111,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 int AvgRentPriceForMonthlyrandom = random.Next(0, 101);
                 var jsonData8 = await responseMessage8.Content.ReadAsStringAsync();
                 var value8 = JsonConvert.DeserializeObject<ResultStatisticDto>(jsonData8);
-                ViewBag.AvgRentPriceForMonthly = value8.AvgRentPriceForMonthly;
+                ViewBag.AvgRentPriceForMonthly = value8.AvgRentPriceForMonthly.ToString("0.00");
                 ViewBag.AvgRentPriceForMonthlyrandom = AvgRentPriceForMonthlyrandom;
             }
             #endregion
@@ -129,14 +129,14 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region Statistic10
-            var responseMessage10 = await client.GetAsync("https://localhost:7100/api/Statistics/GetBrandNameByMaxChar");
+            var responseMessage10 = await client.GetAsync("https://localhost:7100/api/Statistics/GetBrandNameByMaxCar");
             if (responseMessage10.IsSuccessStatusCode)
             {
-                int BrandNameByMaxCharrandom = random.Next(0, 101);
+                int BrandNameByMaxCarrandom = random.Next(0, 101);
                 var jsonData10 = await responseMessage10.Content.ReadAsStringAsync();
                 var value10 = JsonConvert.DeserializeObject<ResultStatisticDto>(jsonData10);
-                ViewBag.BrandNameByMaxChar = value10.BrandNameByMaxChar;
-                ViewBag.BrandNameByMaxCharrandom = BrandNameByMaxCharrandom;
+                ViewBag.BrandNameByMaxCar = value10.BrandNameByMaxCar;
+                ViewBag.BrandNameByMaxCarrandom = BrandNameByMaxCarrandom;
             }
             #endregion
 
@@ -195,7 +195,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 int CarBrandAndModelByRentPriceMaxrandom = random.Next(0, 101);
                 var jsonData15 = await responseMessage15.Content.ReadAsStringAsync();
                 var value15 = JsonConvert.DeserializeObject<ResultStatisticDto>(jsonData15);
-                ViewBag.CarBrandAndModelByRentPriceMax = value15.GetCarBrandAndModelByRentPriceMax;
+                ViewBag.CarBrandAndModelByRentPriceMax = value15.CarBrandAndModelByRentPriceMax;
                 ViewBag.CarBrandAndModelByRentPriceMaxrandom = CarBrandAndModelByRentPriceMaxrandom;
             }
             #endregion
@@ -207,7 +207,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 int CarBrandAndModelByRentPriceMinrandom = random.Next(0, 101);
                 var jsonData16 = await responseMessage16.Content.ReadAsStringAsync();
                 var value16 = JsonConvert.DeserializeObject<ResultStatisticDto>(jsonData16);
-                ViewBag.CarBrandAndModelByRentPriceMin = value16.GetCarBrandAndModelByRentPriceMin;
+                ViewBag.CarBrandAndModelByRentPriceMin = value16.CarBrandAndModelByRentPriceMin;
                 ViewBag.CarBrandAndModelByRentPriceMinrandom = CarBrandAndModelByRentPriceMinrandom;
             }
             #endregion

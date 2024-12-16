@@ -69,10 +69,10 @@ namespace CarBook.WebApi.Controllers
             var value = await _mediator.Send(new GetCarCountByTranmissionIsAutoQuery());
             return Ok(value);
         }
-        [HttpGet("GetBrandNameByMaxChar")]
-        public async Task<IActionResult> GetBrandNameByMaxChar()
+        [HttpGet("GetBrandNameByMaxCar")]
+        public async Task<IActionResult> GetBrandNameByMaxCar()
         {
-            var value = await _mediator.Send(new GetBrandNameByMaxCharQuery());
+            var value = await _mediator.Send(new GetBrandNameByMaxCarQuery());
             return Ok(value);
         }
         [HttpGet("GetBlogTitleByMaxBlogComment")]

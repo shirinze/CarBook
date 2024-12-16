@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace CarBookApplication.Features.Mediator.Handlers.StatisticsHandlers
 {
-    public class GetBrandNameByMaxCharQueryHandler : IRequestHandler<GetBrandNameByMaxCharQuery, GetBrandNameByMaxCharQueryResult>
+    public class GetBrandNameByMaxCarQueryHandler : IRequestHandler<GetBrandNameByMaxCarQuery, GetBrandNameByMaxCarQueryResult>
     {
         private readonly IStatisticsRepository _repository;
 
-        public GetBrandNameByMaxCharQueryHandler(IStatisticsRepository repository)
+        public GetBrandNameByMaxCarQueryHandler(IStatisticsRepository repository)
         {
             _repository = repository;
         }
-        public async Task<GetBrandNameByMaxCharQueryResult> Handle(GetBrandNameByMaxCharQuery request, CancellationToken cancellationToken)
+        public async Task<GetBrandNameByMaxCarQueryResult> Handle(GetBrandNameByMaxCarQuery request, CancellationToken cancellationToken)
         {
-            var value = _repository.GetBrandNameByMaxChar();
-            return new GetBrandNameByMaxCharQueryResult { BrandNameByMaxChar = value };
+            var value = _repository.GetBrandNameByMaxCar();
+            return new GetBrandNameByMaxCarQueryResult { BrandNameByMaxCar = value };
         }
     }
 }

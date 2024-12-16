@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarBookApplication.Features.Mediator.Results.StatisticsResults
 {
-    public class GetBrandNameByMaxCharQueryResult
+    public class GetBrandNameByMaxCarQueryResult
     {
-        public string BrandNameByMaxChar { get; set; }
+        public string BrandNameByMaxCar { get; set; }
     }
 }
