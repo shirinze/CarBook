@@ -1,0 +1,50 @@
+﻿@model CreateReservationDto
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<div class="col-md-12 block-9 mb-md-5">
+
+    <form class="bg-light p-5 contact-form" method="post">
+        <h3 class="alert alert-success">Araç Rezervasyon Formu</h3>
+        <br />
+
+        <input type="hidden" name="CarID" value="@ViewBag.v3" class="form-control" placeholder="Araba Modeli">
+
+        <div class="form-group">
+            <input type="text" name="Name" class="form-control" placeholder="Adınız">
+        </div>
+        <div class="form-group">
+            <input type="text" name="Surename" class="form-control" placeholder="Soy Adınız">
+        </div>
+        <div class="form-group">
+            <input type="text" name="Email" class="form-control" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input type="text" name="Phone" class="form-control" placeholder="Telefon">
+        </div>
+        <div class="form-group">
+            <label for="" class="label">Alınacak Lokasyon</label>
+            @Html.DropDownListFor(x => x.PickUpLocationID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label for="" class="label">Teslim Edilecek Lokasyon</label>
+            @Html.DropDownListFor(x => x.DropOffLocationID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <input type="text" name="Age" class="form-control" placeholder="Yaşınız">
+        </div>
+        <div class="form-group">
+            <input type="text" name="DriverLicenseYear" class="form-control" placeholder="Ehliyet Yılınız">
+        </div>
+        <div class="form-group">
+            <textarea name="Description" id="" cols="30" rows="7" class="form-control" placeholder="not ekle"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Tamamla" class="btn btn-primary py-3 px-5">
+        </div>
+    </form>
+
+</div>
+
