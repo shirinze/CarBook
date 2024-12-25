@@ -25,6 +25,7 @@ namespace CarBook.WebUI.Controllers
                 var values = JsonConvert.DeserializeObject<List<ResultAllBlogWithAuthorDto>>(jsonData);
                 return View(values);
             }
+         
             return View();
         }
 
@@ -33,6 +34,12 @@ namespace CarBook.WebUI.Controllers
             ViewBag.v1 = "Bloglar";
             ViewBag.v2 = "Blog Detayı";
             ViewBag.blogid = id;
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"https://localhost:7100/api/Comments/GetCountCommentByBlogList?id=" + id);
+            var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            ViewBag.commentcount = jsonData;
+               
+           
             return View();
         }
     }
