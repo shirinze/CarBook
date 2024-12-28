@@ -25,14 +25,12 @@ namespace CarBookApplication.Features.Mediator.Handlers.CarPricingHandlers
 			var values = _repository.GetCarPricingWithTimePeriod();
 			return values.Select(x => new GetCarPricingWithTimePeriodQueryResult
 			{
+				Brand=x.Brand,
 				Model = x.Model,
 				CoverImageUrl=x.CoverImageUrl,
 				DailyAmount = x.Amount[0],
 				WeeklyAmount = x.Amount[1],
 				MonthlyAmount = x.Amount[2],
-				
-			
-				
 			}).ToList();
 			
 		}
