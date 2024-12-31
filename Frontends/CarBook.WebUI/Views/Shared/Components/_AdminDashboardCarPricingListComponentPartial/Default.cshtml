@@ -1,0 +1,48 @@
+﻿@model List<ResultCarPricingWithModelTimePeriyodDto>
+
+    <div class="col-xl-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Araba Kiralama Tablosu</h4>
+                <p class="card-subtitle mb-4 font-size-13">
+                    
+                </p>
+
+                <div class="table-responsive">
+                    <table class="table table-centered table-hover table-xl mb-0" id="recent-orders">
+                        <thead>
+                            <tr>
+                                <th class="border-top-0">Marka</th>
+                                <th class="border-top-0">Model</th>
+                                <th class="border-top-0">Günlük Fiyat</th>
+                                <th class="border-top-0">Haftalık Fiyat</th>
+                                <th class="border-top-0">Aylık Fiyat</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-truncate">@item.Brand</td>
+                                    <td class="text-truncate">@item.model</td>
+                                    <td>
+                                        <span class="badge badge-soft-secondary p-2">@item.dailyAmount ₺</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-soft-secondary p-2">@item.weeklyAmount ₺</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-soft-secondary p-2">@item.monthlyAmount ₺</span>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div> 
+        </div> 
+    </div> 
+

@@ -58,17 +58,9 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
         [Route("Index/{id}")]
         public async Task<IActionResult> Index(List<ResultCarFeatureDetailDto> carfeaturedetaildto)
         {
-            
-            
             var client = _httpClientFactory.CreateClient();
-
-
-
-
             foreach (var item in carfeaturedetaildto)
             {
-               
-
                 if (item.Available)
                 {
                     await client.GetAsync("https://localhost:7100/api/CarFeatures/ChangeCarFeatureAvailableTrue?id=" + item.CarFeatureID);
@@ -79,11 +71,9 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
 
                 }
             }
-
+            return RedirectToAction("Index", "AdminCar");
 
         }
         
-       
-
     }
 }
