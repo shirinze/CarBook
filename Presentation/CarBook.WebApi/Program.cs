@@ -7,6 +7,7 @@ using CarBook.Persistence.Repositories.CarPricingRepositories;
 using CarBook.Persistence.Repositories.CarRepositories;
 using CarBook.Persistence.Repositories.CommentRepositories;
 using CarBook.Persistence.Repositories.RentACarRepositories;
+using CarBook.Persistence.Repositories.ReviewRepositories;
 using CarBook.Persistence.Repositories.StatisticsRepositories;
 using CarBook.Persistence.Repositories.TagCloudRepositories;
 using CarBookApplication.Features.CQRS.Handlers.AboutHandlers;
@@ -23,9 +24,12 @@ using CarBookApplication.Interfaces.CarFeatureInterfaces;
 using CarBookApplication.Interfaces.CarInterfaces;
 using CarBookApplication.Interfaces.CarPricingInterfaces;
 using CarBookApplication.Interfaces.RentACarInterfaces;
+using CarBookApplication.Interfaces.ReviewInterfaces;
 using CarBookApplication.Interfaces.StatisticsInterfaces;
 using CarBookApplication.Interfaces.TagCloudInterfaces;
 using CarBookApplication.Services;
+using FluentValidation.AspNetCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
@@ -53,6 +57,7 @@ builder.Services.AddScoped(typeof(ITagCloudRepository), typeof(TagCloudRepositor
 builder.Services.AddScoped(typeof(IRentACarRepository), typeof(RentACarRepository));
 builder.Services.AddScoped(typeof(ICarFeatureRepository), typeof(CarFeatureRepository));
 builder.Services.AddScoped(typeof(ICarDescriptionRepository), typeof(CarDescriptionRepository));
+builder.Services.AddScoped(typeof(IReviewRepository), typeof(ReviewRepository));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(CommentRepository<>));
 
 
@@ -99,7 +104,12 @@ builder.Services.AddScoped<UpdateContactCommandHandler>();
 
 
 builder.Services.AddApplicationService(builder.Configuration);
-builder.Services.AddControllers();
+
+builder.Services.AddControllers().AddFluentValidation(x =>
+{
+    x.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
