@@ -37,7 +37,7 @@
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center mb-5">
-                                            <a href="index.html" class="text-dark font-size-22 font-family-secondary">
+                                            <a href="/Default/Index/" class="text-dark font-size-22 font-family-secondary">
                                                 <i class="mdi mdi-alpha-x-circle"></i> <b>CarBook</b>
                                             </a>
                                         </div>
@@ -45,10 +45,10 @@
                                         <p class="text-muted mb-4">Admin sayfasına erişim için bilgilerinizi giriniz.</p>
                                         <form class="user" method="post">
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                                                <input type="text" class="form-control form-control-user" id="exampleInputUsername" asp-for="Username" placeholder="Kullanıcı Adı">
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" asp-for="Password" placeholder="Password">
                                             </div>
                                             <button class="btn btn-success btn-block waves-effect waves-light"> Giriş Yap </button>
                                         </form>
